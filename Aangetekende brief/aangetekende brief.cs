@@ -10,12 +10,7 @@ namespace Aangetekende_brief
         {
             double AFstand;
             Console.Write("Geef de reisafstand in km: ");
-            AFstand = Convert.ToDouble(Console.ReadLine());
-            if (AFstand < 0)
-            {
-                Console.WriteLine("De afstand kan niet negatief zijn!!!");
-                ReisAfstand();
-            }
+            AFstand = Convert.ToDouble(Console.ReadLine());            
             return AFstand;
         }
         public virtual byte Reistijd(double reisafstand)

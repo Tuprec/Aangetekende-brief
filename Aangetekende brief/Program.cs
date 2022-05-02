@@ -22,24 +22,51 @@ namespace Aangetekende_brief
             do
             {
                 Console.WriteLine("Welk soort brief wilt u versturen?");
-                Console.Write("1. Aangetekende brief \n2. Internationale Aangetekende Brief \n3. Hoge Prioriteits Aangetekende Brief");
+                Console.WriteLine("1. Aangetekende brief \n2. Internationale Aangetekende Brief \n3. Hoge Prioriteits Aangetekende Brief");
                 intBrief = Convert.ToInt32(Console.ReadLine());
 
                 if (intBrief == 1)
                 {
                     aangetekende_brief brief = new aangetekende_brief();
-                    afstand = brief.ReisAfstand();
+                    do
+                    {
+                        afstand = brief.ReisAfstand();
+                        if (afstand < 0)
+                        {
+                            Console.WriteLine("De afstand kan niet negatief zijn!!!");
+                        }
+                    } while (afstand < 0);
+
                     Console.WriteLine(afstand);
                 }
                 else if (intBrief == 2)
                 {
                     InternationaleAangetekendeBrief interbrief = new InternationaleAangetekendeBrief();
+                    do
+                    {
+                        afstand = interbrief.ReisAfstand();
+                        if (afstand < 0)
+                        {
+                            Console.WriteLine("De afstand kan niet negatief zijn!!!");
+                        }
+                    } while (afstand < 0);
+
+                    Console.WriteLine(afstand);
                 }
                 else
                 {
                     HogePrioriteitsAangetekendeBreif hogeBrief = new HogePrioriteitsAangetekendeBreif();
-                }
+                    do
+                    {
+                        afstand = hogeBrief.ReisAfstand();
+                        if (afstand < 0)
+                        {
+                            Console.WriteLine("De afstand kan niet negatief zijn!!!");
+                        }
+                    } while (afstand < 0);
 
+                    Console.WriteLine(afstand);
+                }
                 Console.Write("Wilt u nog een brief opgeven(Y/N): ");
                 strAnswer = Console.ReadLine().ToUpper();
             } while (strAnswer == "Y");
