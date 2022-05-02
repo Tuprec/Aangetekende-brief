@@ -6,13 +6,13 @@ namespace Aangetekende_brief
 {
     class HogePrioriteitsAangetekendeBreif:aangetekende_brief
     {
-        public byte Reistijd(double reisafstand)
+        public override byte Reistijd(double reisafstand)
         {
             byte tijd;
             tijd = Convert.ToByte(Math.Round((reisafstand/200), 0, MidpointRounding.AwayFromZero));
             return tijd;
         }
-        public double Kostprijs(double reisafstand)
+        public override double Kostprijs(double reisafstand)
         {
             double prijs;
             double afstand = reisafstand / 100;
